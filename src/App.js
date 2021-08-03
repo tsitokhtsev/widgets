@@ -42,13 +42,13 @@ const App = () => {
 	return (
 		<div>
 			<Header />
-			<Route path="/">
+			<Route path="/widgets/">
 				<Accordion items={items} />
 			</Route>
-			<Route path="/list">
+			<Route path="/widgets/list">
 				<Search />
 			</Route>
-			<Route path="/dropdown">
+			<Route path="/widgets/dropdown">
 				<Dropdown
 					label="Select a color"
 					options={options}
@@ -56,7 +56,7 @@ const App = () => {
 					onSelectedChange={setSelected}
 				/>
 			</Route>
-			<Route path="/translate">
+			<Route path="/widgets/translate">
 				<Translate />
 			</Route>
 		</div>
