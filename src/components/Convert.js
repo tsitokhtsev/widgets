@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+require('dotenv').config()
 
 const Convert = ({ language, text }) => {
 	const [translated, setTranslated] = useState('')
 	const [debouncedText, setDebouncedText] = useState(text)
+
+	console.log(process.env.TRANSLATE_API_KEY)
 
 	useEffect(() => {
 		const timerId = setTimeout(() => {
@@ -24,7 +27,7 @@ const Convert = ({ language, text }) => {
 					params: {
 						q: debouncedText,
 						target: language.value,
-						key: 'AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM'
+						key: process.env.TRANSLATE_API_KEY
 					}
 				}
 			)
