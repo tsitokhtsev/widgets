@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Accordion from './components/Accordion'
 import Search from './components/Search'
 import Dropdown from './components/Dropdown'
-import Translate from './components/Translate'
+// import Translate from './components/Translate'
 import Route from './components/Route'
 import Header from './components/Header'
 
@@ -42,13 +42,13 @@ const App = () => {
 	return (
 		<div>
 			<Header />
-			<Route path="/">
+			<Route path="/widgets/">
 				<Accordion items={items} />
 			</Route>
-			<Route path="/list">
+			<Route path="/widgets/search">
 				<Search />
 			</Route>
-			<Route path="/dropdown">
+			<Route path="/widgets/dropdown">
 				<Dropdown
 					label="Select a color"
 					options={options}
@@ -56,9 +56,9 @@ const App = () => {
 					onSelectedChange={setSelected}
 				/>
 			</Route>
-			<Route path="/translate">
+			{/* <Route path="/widgets/translate">
 				<Translate />
-			</Route>
+			</Route> */}
 		</div>
 	)
 }
